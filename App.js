@@ -17,6 +17,8 @@ import RadioButton from './components/snippets/radioButton';
 import RadioButtonDynamic from './components/snippets/radioButtonDynamic';
 import ActivityIndicatorExp from './components/snippets/ActivityIndiator';
 import PressableEvent from './components/events/pressableEvent';
+import PlatformOs from './components/react_component/platformOs';
+import WebViewExp from './components/snippets/webViewExp';
 
 export default function App() {
   let name = 'Adnan-Zaib';
@@ -43,7 +45,11 @@ export default function App() {
 
       {/* <ActivityIndicatorExp /> */}
 
-      <PressableEvent />
+      {/* <PressableEvent /> */}
+
+      {/* <PlatformOs /> */}
+
+      <WebViewExp />
       
     </View>
     
@@ -55,11 +61,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    paddingTop:30
+    
     // alignItems: 'center',
     // justifyContent: 'center',
   },
   heading: {
     color: 'green',
-    fontSize: 20
+    fontSize: 20,
   }
 });
