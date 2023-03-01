@@ -1,7 +1,7 @@
 import { Button, StyleSheet,Text, View } from "react-native";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-const App = () => {
+const StackNavigation = () => {
     const Stack = createNativeStackNavigator(); 
     return (
         <NavigationContainer>
@@ -17,7 +17,7 @@ const App = () => {
 const Login = (props) => {
     return (
         <View style={styles.layout}>
-            <Text style={styles.heading}>Login Screen</Text>
+            <Text style={styles.heading}>My Login Screen</Text>
             <Button title="Go Home" onPress={() => props.navigation.navigate("Home")} />
         </View>
     );
@@ -41,7 +41,6 @@ const About = (props) => {
     );
 };
 
-
 const styles = StyleSheet.create({
     layout: {
         flex:1, justifyContent:"center", alignItems:"center"
@@ -52,4 +51,5 @@ const styles = StyleSheet.create({
 
 })
 
-export default App;
+
+export default StackNavigation;
