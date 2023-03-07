@@ -1,36 +1,39 @@
-import { useEffect, useState } from "react";
-import {ScrollView, StyleSheet, Text, View } from "react-native";
+import { useEffect,useState } from "react";
+import { FlatList, StyleSheet, Text, View } from "react-native";
 
-const ListWithAPi = () => {
+const GetAPi = () => {
     const [data, setData] = useState([]);
-    const getDataHandler = async () => {
-        const url = "https://jsonplaceholder.typicode.com/posts";
+    const fetchData = async () => {
+        const url = "http://localhost:3000/posts";
         let result  = await fetch(url);
         result = await result.json();
-        setData(result);
+        setData(result);        
     }
-    useEffect(()=>{
-        getDataHandler();
+    useEffect(() => {
+        fetchData();
     },[])
     return (
-        <ScrollView>
-            <View style={styles.layout}>
-            <Text style={styles.heading}>List with api data</Text>
-            <Text style={styles.heading}>List using map() with scrollView</Text>
+        <View style={styles.layout}>
+            <Text style={styles.heading}>List With FlatList</Text>
             {
                 data.length?
-                data.map((item)=>{
-                    return <View style={styles.card} key={item.id}>
-                        <Text style={styles.title}>{item.id}._ {item.title}</Text>
-                    </View>
-                })
+                <FlatList 
+                data={data}
+                renderItem={({item}) => {
+                    return (
+                        <View style={styles.card}>
+                            <Text style={styles.title}>Title: {item.title}, auther: {item.author}</Text>
+                        </View>
+                    );
+                }}
+                keyExtractor={(item)=>item.id}
+                />
                 :
                 null
             }
-            </View>
-        </ScrollView>
+        </View>
     );
-}
+}   
 
 const styles = StyleSheet.create({
     layout: {
@@ -65,8 +68,6 @@ const styles = StyleSheet.create({
     card: {
         width: '100%'
     }
+});
 
-})
-
-
-export default ListWithAPi;
+export default GetAPi; 

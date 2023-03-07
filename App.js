@@ -21,6 +21,9 @@ import PlatformOs from './components/react_component/platformOs';
 import WebViewExp from './components/snippets/webViewExp';
 import SimpleAPI from './components/restAPI/simpleApi';
 import ListWithAPi from './components/restAPI/listWithApi';
+import ListWithFlatList from './components/restAPI/ListWithFlatList';
+import GetApi from './components/restAPI/json-server/getApi';
+import PostApi from './components/restAPI/json-server/postApi';
 export default function App() {
   let name = 'Adnan-Zaib';
   let email = 'adnanzaib486@gmail.com';
@@ -56,7 +59,13 @@ export default function App() {
 
       {/* <SimpleAPI /> */}
 
-      <ListWithAPi />
+      {/* <ListWithAPi /> */}
+
+      {/* <ListWithFlatList /> */}
+
+      {/* <GetApi /> */}
+
+      <PostApi />
 
 
 
