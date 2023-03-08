@@ -18,17 +18,22 @@ const PostApi = () => {
         console.warn('auther length:'+ auther.length);
         if(!title){ 
             setError(true) 
-            setErrorMessage("Some field are missing") 
+            setErrorMessage("Some field are missing")
+            return false; 
         }
         if(!auther){ 
             setError(true) 
-            setErrorMessage("Some field are missing") 
+            setErrorMessage("Some field are missing")
+            return false; 
         }
+
+
+        return true;
         
     }
     const UploadData = async () => {
-       validate();
-        if(error == false){
+       let response = validate();
+        if(response == true){
             console.warn('error not found')
             console.warn(error)
             const data = {
@@ -52,7 +57,7 @@ const PostApi = () => {
     }
     useEffect(()=>{
         console.warn("use effect error:"+error)
-    },[])
+    },[error,errorMessage])
     return (
         <View>
             <Text>Post data with api..!</Text>

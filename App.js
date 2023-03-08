@@ -24,6 +24,7 @@ import ListWithAPi from './components/restAPI/listWithApi';
 import ListWithFlatList from './components/restAPI/ListWithFlatList';
 import GetApi from './components/restAPI/json-server/getApi';
 import PostApi from './components/restAPI/json-server/postApi';
+import ListWithApiData from './components/restAPI/json-server/listWithApiData';
 export default function App() {
   let name = 'Adnan-Zaib';
   let email = 'adnanzaib486@gmail.com';
@@ -65,7 +66,9 @@ export default function App() {
 
       {/* <GetApi /> */}
 
-      <PostApi />
+      {/* <PostApi /> */}
+
+      <ListWithApiData />
 
 
 
