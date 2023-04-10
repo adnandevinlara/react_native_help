@@ -96,22 +96,22 @@ const UpdateModal = (props) => {
     },[]);
     return (
         <View style={styles.modelWrapper}>
-                    <View style={styles.modelBody}>
-                        <Text style={styles.textStyle}>Update Post</Text>
-                        <TextInput style={styles.input} placeholder="Title..." value={title} onChangeText={(text)=>setTitle(text)} />
-                        <TextInput style={styles.input} placeholder="auther..." value={author} onChangeText={(text)=>setAuthor(text)} />
-                        <Pressable
-                            style={[styles.button, styles.buttonClose]}
-                            onPress={() => updatePostHandler(props)}>
-                            <Text style={styles.textStyle}>update post</Text>
-                        </Pressable>
-                        <Pressable
-                            style={[styles.button, styles.buttonClose]}
-                            onPress={() => props.setModalVisible(false)}>
-                            <Text style={styles.textStyle}>close modal</Text>
-                        </Pressable>
-                    </View>
-                </View>
+            <View style={styles.modelBody}>
+                <Text style={styles.textStyle}>Update Post</Text>
+                <TextInput style={styles.input} placeholder="Title..." value={title} onChangeText={(text)=>setTitle(text)} />
+                <TextInput style={styles.input} placeholder="auther..." value={author} onChangeText={(text)=>setAuthor(text)} />
+                <Pressable
+                    style={[styles.button, styles.buttonClose]}
+                    onPress={() => updatePostHandler(props)}>
+                    <Text style={styles.textStyle}>update post</Text>
+                </Pressable>
+                <Pressable
+                    style={[styles.button, styles.buttonClose]}
+                    onPress={() => props.setModalVisible(false)}>
+                    <Text style={styles.textStyle}>close modal</Text>
+                </Pressable>
+            </View>
+        </View>
     );
 }
 

@@ -25,6 +25,9 @@ import ListWithFlatList from './components/restAPI/ListWithFlatList';
 import GetApi from './components/restAPI/json-server/getApi';
 import PostApi from './components/restAPI/json-server/postApi';
 import ListWithApiData from './components/restAPI/json-server/listWithApiData';
+import SearchApiData from './components/restAPI/json-server/searchApiData';
+import UseRefHook from './components/hooks/useRefHook';
+import AsyncStorageExample from './components/storage/asyncStorageExample';
 export default function App() {
   let name = 'Adnan-Zaib';
   let email = 'adnanzaib486@gmail.com';
@@ -68,7 +71,13 @@ export default function App() {
 
       {/* <PostApi /> */}
 
-      <ListWithApiData />
+      {/* <ListWithApiData /> */}
+
+      {/* <SearchApiData /> */}
+
+      {/* <UseRefHook /> */}
+
+      <AsyncStorageExample />
 
 
 
