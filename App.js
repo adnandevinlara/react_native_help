@@ -28,6 +28,11 @@ import ListWithApiData from './components/restAPI/json-server/listWithApiData';
 import SearchApiData from './components/restAPI/json-server/searchApiData';
 import UseRefHook from './components/hooks/useRefHook';
 import AsyncStorageExample from './components/storage/asyncStorageExample';
+import Main from './components/redux_components/main';
+
+import { Provider } from 'react-redux';
+import store from './components/redux/store';
+
 export default function App() {
   let name = 'Adnan-Zaib';
   let email = 'adnanzaib486@gmail.com';
@@ -77,7 +82,12 @@ export default function App() {
 
       {/* <UseRefHook /> */}
 
-      <AsyncStorageExample />
+      {/* <AsyncStorageExample /> */}
+      
+      
+      <Provider store={store}>
+        <Main />
+      </Provider>
 
 
 
