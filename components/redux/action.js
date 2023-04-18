@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_FROM_CART } from "./constants";
+import { ADD_TO_CART, REMOVE_FROM_CART,GET_USER_LIST } from "./constants";
 
 export function addToCart(item){
     return (
@@ -16,6 +16,14 @@ export function removeFromCart(item){
             // action tell which task to perform from here
             type: REMOVE_FROM_CART,
             payload: item
+        }
+    )
+}
+
+export function getUserList() {
+    return (
+        {
+            type: GET_USER_LIST,
         }
     )
 }
