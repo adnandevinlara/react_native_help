@@ -7,7 +7,7 @@ function* getUserList() {
     // bzc these are generator functions
     let data = yield fetch(url);
     data = yield data.json();
-    console.log(data);
+    console.log('adnan',data);
     // data consoled successfull, but how to get this data to userList
     // component to display
     // 1) for that declare a constant in contants.js file

@@ -5,14 +5,21 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUserList } from "../redux/action";
 const UserList = () => {
     const dispatch = useDispatch();
-    const userList = useSelector((state) => state.reducer);
+    const userLists = useSelector((state) => state.reducer);
+    
     useEffect(()=>{
         dispatch(getUserList());
     },[])
-    console.log('in component',userList);
+    console.log('in component',userLists);
     return ( 
         <View style={styles.container}>
             <Text style={styles.cart}>User list screen</Text>
+            {   
+                userLists.length?
+                userLists[0]['users'].map((item) =><Text key={Math.random()}>Name: {item.firstName}</Text>)
+                :
+                <Text>No Data</Text>
+            }
         </View>
      );
 }
